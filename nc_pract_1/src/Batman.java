@@ -9,4 +9,12 @@ public class Batman extends Heroes{
     protected String CallBatmobile() {
         return feature + "I have a SuperCar";
     }
+
+    public String toString() {
+        return "Batman{" +
+                "name='" + name + '\'' +
+                ", SuperName='" + SuperName + '\'' +
+                ", feature='" + feature + '\'' +
+                '}';
+    }
 }

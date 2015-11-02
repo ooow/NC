@@ -16,6 +16,7 @@ public class Heroes {
         B.name = "Bruce";
         B.SuperName = "Batman";
         System.out.println(B.CallBatmobile());
+        System.out.println(B);
 
     }
 

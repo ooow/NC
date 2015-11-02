@@ -4,7 +4,6 @@
 
 public class Flash implements CallHero {
 
-    @Override
     public String Superpower() {
         return "// // S// P// E// E// D// //";
     }
