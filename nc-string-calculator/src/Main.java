@@ -14,19 +14,22 @@ public class Main {
         S = t.next();
     }
 
-/*    String Search(String s){
-        int start = s.indexOf("(");
-        int stop = s.indexOf("(", start + 1);
-        int end = s.indexOf(")");
-        if ( stop == -1)
-            stop = end + end;
-        if (start != -1 && end != -1 && stop > end)
-            return s.substring(start + 1, end);
-        else
-            return s;
-    }*/
+    StringBuffer Calculator(StringBuffer s){            // Избавление от () и вычисление выражения
+        int start = s.lastIndexOf("(");
+        int end = s.indexOf(")", start);
+        if ( start == -1 && end != -1 || start != -1 && end == -1) {
+            StringBuffer error = new StringBuffer("Некорректное выражение");
+            return error;
+        }
+        if (start != -1 && end != -1) {
+            StringBuffer temp = new StringBuffer(s.substring(start + 1, end));
+            temp = calculateSimple(calculateU(temp));
+            Calculator(s.replace(start, end + 1, temp.toString()));
+        }
+        return calculateSimple(calculateU(s));
+    }
 
-    StringBuffer calculateU(StringBuffer s){ // Упрощение выражения до элементарных операций суммирования +
+    StringBuffer calculateU(StringBuffer s){            // Упрощение выражения до элементарных операций суммирования +
         int u = s.indexOf("*");
         if ( u != -1)
         {
@@ -50,14 +53,13 @@ public class Main {
         return s;
     }
 
-    StringBuffer calculateSimple(StringBuffer s){  // Вычисление вырожения содержащее только +
+    StringBuffer calculateSimple(StringBuffer s){       // Вычисление вырожения содержащее только +
         int u = s.indexOf("+");
         if ( u != -1)
         {
             int end = s.indexOf("+", u + 1);
             if (end == -1)
                 end = s.length();
-
             int start = 0;
 
             int a = Integer.valueOf(s.substring(start, u));
@@ -73,8 +75,7 @@ public class Main {
     void recap() throws Exception
     {
         StringBuffer st = new StringBuffer(S);
-        calculateU(st);                             // Запуск упрощения выражения
-        System.out.println(calculateSimple(st));   // Вычисление выражения и вывод ответа
+        System.out.println(Calculator(st));   // Вычисление выражения и вывод ответа
     }
 
     public static void main(String[] args) throws Exception {
