@@ -1,0 +1,18 @@
+8
+Messages:
+#0 Kak
+#0 Dela?
+#1 KILL BILL
+#1 AND TAKE ICECREAM
+#0 Molodec
+#1 YOU KILL HIM?
+#1 NOBADY!!
+#0 Goodbay!
+6
+People:
+#0 Alan 2 Rony Make
+#0 Rony 1 Sara
+#1 Sara 0
+#1 Make 2 Tom Gabbi
+#0 Tom 0
+#0 Gabbi 0
