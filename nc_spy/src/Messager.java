@@ -10,7 +10,6 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Messager {
-    private PrintWriter out;
     private int n;
     private int n_friends;
     private ArrayList<String>  ms = new ArrayList<>();
