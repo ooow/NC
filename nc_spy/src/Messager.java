@@ -5,11 +5,9 @@
 import java.io.*;
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Scanner;
-import java.util.StringTokenizer;
 
 public class Messager {
     private PrintWriter out;
