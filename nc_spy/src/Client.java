@@ -8,38 +8,31 @@ import java.util.ArrayList;
  * Created by goga on 11.11.15.
  */
 
+// Обычный пользователь сети
 public class Client{
     protected String name;
-    protected int count_friends;
     protected ArrayList<Client> base = new ArrayList<>();
 
-    public Client(String name, int n_friends)
+    public Client(String name, Client... clients)
     {
         this.name = name;
-        this.count_friends = n_friends;
+        for (int i = 0; i < clients.length; i++) {
+            base.add(clients[i]);
+        }
     }
 
-    public void make_friends(ArrayList<Client> friends)
-    {
-        this.base = friends;
-    }
-
-    public String getName() {return name;}
-    public Integer getNfr() {return count_friends;}
-
-    public void adopt_and_send(String s) throws SQLException {
-        if (s.startsWith("#0")) {
-            s = s.substring(2);
+    public void adopt_and_send(Message m) throws SQLException { // Может хранить только обычные сообщения
+        if (m.getType() == 0) {
             Connection c = null;
             Statement stmt = null;
             c = DriverManager.getConnection("jdbc:sqlite:openstream.db");
             stmt = c.createStatement();
-            String sql = "INSERT INTO OPENSTREAM VALUES ('"+ s +"');";
+            String sql = "INSERT INTO OPENSTREAM VALUES ('"+ m.getSense() +"');";
             stmt.executeUpdate(sql);
         }
-        if (count_friends > 0)
-            for (int i = 0; i < count_friends; i++) {
-                base.get(i).adopt_and_send(s);
+        if (this.base.size() > 0)
+            for (int i = 0; i < this.base.size(); i++) {
+                base.get(i).adopt_and_send(m);
             }
     }
 }

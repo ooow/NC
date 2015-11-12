@@ -23,18 +23,18 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Messager.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Messager.java">
+      <file leaf-file-name="Node.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Node.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="126" column="30" selection-start-line="126" selection-start-column="17" selection-end-line="126" selection-end-column="30" />
+              <caret line="52" column="58" selection-start-line="52" selection-start-column="58" selection-end-line="52" selection-end-column="58" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
                 <element signature="imports" expanded="true" />
-                <marker date="1447278584069" expanded="true" signature="743:794" placeholder="CREATE TABLE..IF..." />
-                <marker date="1447278584069" expanded="true" signature="882:900" placeholder="DELETE FROM ..." />
-                <marker date="1447278584069" expanded="true" signature="1058:1113" placeholder="CREATE TABLE..IF..." />
-                <marker date="1447278584069" expanded="true" signature="1201:1223" placeholder="DELETE FROM ..." />
+                <marker date="1447358900966" expanded="true" signature="557:608" placeholder="CREATE TABLE..IF..." />
+                <marker date="1447358900966" expanded="true" signature="696:714" placeholder="DELETE FROM ..." />
+                <marker date="1447358900966" expanded="true" signature="872:927" placeholder="CREATE TABLE..IF..." />
+                <marker date="1447358900966" expanded="true" signature="1015:1037" placeholder="DELETE FROM ..." />
               </folding>
             </state>
           </provider>
@@ -44,41 +44,40 @@
         <entry file="file://$PROJECT_DIR$/src/Client.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="15" column="24" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
+              <caret line="23" column="105" selection-start-line="23" selection-start-column="105" selection-end-line="23" selection-end-column="105" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#511#512#0" expanded="true" />
-                <element signature="e#546#547#0" expanded="true" />
-                <marker date="1447275528709" expanded="true" signature="982:1023" placeholder="INSERT INTO ..." />
+                <marker date="1447358859146" expanded="true" signature="852:884" placeholder="INSERT INTO ..." />
+                <marker date="1447358859146" expanded="true" signature="852:904" placeholder="INSERT INTO ..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Spy.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Spy.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Spy.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.21634616">
-              <caret line="16" column="31" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="16" column="114" selection-start-line="16" selection-start-column="114" selection-end-line="16" selection-end-column="114" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="docComment;class#Spy#0" expanded="false" />
-                <marker date="1447277404605" expanded="true" signature="662:703" placeholder="INSERT INTO ..." />
-                <marker date="1447277404605" expanded="true" signature="1076:1088" placeholder="INSERT INTO ..." />
-                <marker date="1447277404605" expanded="true" signature="1076:1103" placeholder="INSERT INTO ..." />
-                <marker date="1447277404605" expanded="true" signature="1076:1104" placeholder="INSERT INTO ..." />
-                <marker date="1447277404605" expanded="true" signature="1076:1113" placeholder="INSERT INTO ..." />
-                <marker date="1447277404605" expanded="true" signature="1076:1116" placeholder="INSERT INTO ..." />
+                <marker date="1447358859166" expanded="true" signature="651:703" placeholder="INSERT INTO ..." />
+                <marker date="1447358859166" expanded="true" signature="1079:1091" placeholder="INSERT INTO ..." />
+                <marker date="1447358859166" expanded="true" signature="1079:1106" placeholder="INSERT INTO ..." />
+                <marker date="1447358859166" expanded="true" signature="1079:1107" placeholder="INSERT INTO ..." />
+                <marker date="1447358859166" expanded="true" signature="1079:1116" placeholder="INSERT INTO ..." />
+                <marker date="1447358859166" expanded="true" signature="1079:1119" placeholder="INSERT INTO ..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="input.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/input.txt">
+      <file leaf-file-name="Message.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Message.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="4" column="12" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="12" />
+            <state vertical-scroll-proportion="0.12038523">
+              <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -91,6 +90,7 @@
       <list>
         <option value="ClassFile" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -105,10 +105,13 @@
         <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/src/secret/Secret_base.java" />
         <option value="$PROJECT_DIR$/src/Secret_base.java" />
-        <option value="$PROJECT_DIR$/src/Client.java" />
         <option value="$PROJECT_DIR$/input.txt" />
-        <option value="$PROJECT_DIR$/src/Spy.java" />
         <option value="$PROJECT_DIR$/src/Messager.java" />
+        <option value="$PROJECT_DIR$/src/Network_launch.java" />
+        <option value="$PROJECT_DIR$/src/Message.java" />
+        <option value="$PROJECT_DIR$/src/Client.java" />
+        <option value="$PROJECT_DIR$/src/Spy.java" />
+        <option value="$PROJECT_DIR$/src/Node.java" />
       </list>
     </option>
   </component>
@@ -148,8 +151,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -184,6 +185,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -197,12 +200,27 @@
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/sqlite-jdbc-3.8.11.1.jar!/" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
-  <component name="RunManager" selected="Application.Messager">
+  <component name="RunManager" selected="Application.Node">
     <configuration default="false" name="Messager" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" value="Messager" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="nc_spy" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="Node" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" value="Node" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -464,12 +482,14 @@
     <configuration default="true" type="osgi.bnd.run" factoryName="Test Launcher (JUnit)">
       <method />
     </configuration>
-    <list size="1">
+    <list size="2">
       <item index="0" class="java.lang.String" itemvalue="Application.Messager" />
+      <item index="1" class="java.lang.String" itemvalue="Application.Node" />
     </list>
     <recent_temporary>
-      <list size="1">
-        <item index="0" class="java.lang.String" itemvalue="Application.Messager" />
+      <list size="2">
+        <item index="0" class="java.lang.String" itemvalue="Application.Node" />
+        <item index="1" class="java.lang.String" itemvalue="Application.Messager" />
       </list>
     </recent_temporary>
   </component>
@@ -486,14 +506,18 @@
       <workItem from="1447233990087" duration="9150000" />
       <workItem from="1447264961640" duration="12091000" />
       <workItem from="1447278450785" duration="2680000" />
+      <workItem from="1447327535205" duration="321000" />
+      <workItem from="1447332087171" duration="214000" />
+      <workItem from="1447354659447" duration="3810000" />
+      <workItem from="1447358599147" duration="319000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23921000" />
+    <option name="totallyTimeSpent" value="28585000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="25" width="1366" height="743" extended-state="6" />
+    <frame x="0" y="25" width="1366" height="743" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -504,11 +528,11 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32872504" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3276923" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Mongo Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24963397" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24926686" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -572,17 +596,17 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Messager.java">
+    <entry file="file://$PROJECT_DIR$/src/Node.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
-            <marker date="1447278584069" expanded="true" signature="743:794" placeholder="CREATE TABLE..IF..." />
-            <marker date="1447278584069" expanded="true" signature="882:900" placeholder="DELETE FROM ..." />
-            <marker date="1447278584069" expanded="true" signature="1058:1113" placeholder="CREATE TABLE..IF..." />
-            <marker date="1447278584069" expanded="true" signature="1201:1223" placeholder="DELETE FROM ..." />
+            <marker date="1447358900966" expanded="true" signature="557:608" placeholder="CREATE TABLE..IF..." />
+            <marker date="1447358900966" expanded="true" signature="696:714" placeholder="DELETE FROM ..." />
+            <marker date="1447358900966" expanded="true" signature="872:927" placeholder="CREATE TABLE..IF..." />
+            <marker date="1447358900966" expanded="true" signature="1015:1037" placeholder="DELETE FROM ..." />
           </folding>
         </state>
       </provider>
@@ -590,12 +614,11 @@
     <entry file="file://$PROJECT_DIR$/src/Client.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <caret line="20" column="5" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#511#512#0" expanded="true" />
-            <element signature="e#546#547#0" expanded="true" />
-            <marker date="1447275528709" expanded="true" signature="982:1023" placeholder="INSERT INTO ..." />
+            <marker date="1447358859146" expanded="true" signature="852:884" placeholder="INSERT INTO ..." />
+            <marker date="1447358859146" expanded="true" signature="852:904" placeholder="INSERT INTO ..." />
           </folding>
         </state>
       </provider>
@@ -607,35 +630,136 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="docComment;class#Spy#0" expanded="false" />
-            <marker date="1447277404605" expanded="true" signature="662:703" placeholder="INSERT INTO ..." />
-            <marker date="1447277404605" expanded="true" signature="1076:1088" placeholder="INSERT INTO ..." />
-            <marker date="1447277404605" expanded="true" signature="1076:1103" placeholder="INSERT INTO ..." />
-            <marker date="1447277404605" expanded="true" signature="1076:1104" placeholder="INSERT INTO ..." />
-            <marker date="1447277404605" expanded="true" signature="1076:1113" placeholder="INSERT INTO ..." />
-            <marker date="1447277404605" expanded="true" signature="1076:1116" placeholder="INSERT INTO ..." />
+            <marker date="1447358859166" expanded="true" signature="651:703" placeholder="INSERT INTO ..." />
+            <marker date="1447358859166" expanded="true" signature="1079:1091" placeholder="INSERT INTO ..." />
+            <marker date="1447358859166" expanded="true" signature="1079:1106" placeholder="INSERT INTO ..." />
+            <marker date="1447358859166" expanded="true" signature="1079:1107" placeholder="INSERT INTO ..." />
+            <marker date="1447358859166" expanded="true" signature="1079:1116" placeholder="INSERT INTO ..." />
+            <marker date="1447358859166" expanded="true" signature="1079:1119" placeholder="INSERT INTO ..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/input.txt">
+    <entry file="file://$PROJECT_DIR$/src/Message.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="4" column="12" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="12" />
+          <caret line="5" column="25" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="25" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Messager.java">
+    <entry file="file://$PROJECT_DIR$/src/Client.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="15" column="24" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <marker date="1447358859146" expanded="true" signature="852:884" placeholder="INSERT INTO ..." />
+            <marker date="1447358859146" expanded="true" signature="852:904" placeholder="INSERT INTO ..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Spy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="9" column="36" selection-start-line="9" selection-start-column="36" selection-end-line="9" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="docComment;class#Spy#0" expanded="false" />
+            <marker date="1447358859166" expanded="true" signature="651:703" placeholder="INSERT INTO ..." />
+            <marker date="1447358859166" expanded="true" signature="1079:1091" placeholder="INSERT INTO ..." />
+            <marker date="1447358859166" expanded="true" signature="1079:1106" placeholder="INSERT INTO ..." />
+            <marker date="1447358859166" expanded="true" signature="1079:1107" placeholder="INSERT INTO ..." />
+            <marker date="1447358859166" expanded="true" signature="1079:1116" placeholder="INSERT INTO ..." />
+            <marker date="1447358859166" expanded="true" signature="1079:1119" placeholder="INSERT INTO ..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Client.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="15" column="24" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <marker date="1447358859146" expanded="true" signature="852:884" placeholder="INSERT INTO ..." />
+            <marker date="1447358859146" expanded="true" signature="852:904" placeholder="INSERT INTO ..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Spy.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
-            <marker date="1447278584069" expanded="true" signature="743:794" placeholder="CREATE TABLE..IF..." />
-            <marker date="1447278584069" expanded="true" signature="882:900" placeholder="DELETE FROM ..." />
-            <marker date="1447278584069" expanded="true" signature="1058:1113" placeholder="CREATE TABLE..IF..." />
-            <marker date="1447278584069" expanded="true" signature="1201:1223" placeholder="DELETE FROM ..." />
+            <element signature="docComment;class#Spy#0" expanded="false" />
+            <marker date="1447358859166" expanded="true" signature="651:703" placeholder="INSERT INTO ..." />
+            <marker date="1447358859166" expanded="true" signature="1079:1091" placeholder="INSERT INTO ..." />
+            <marker date="1447358859166" expanded="true" signature="1079:1106" placeholder="INSERT INTO ..." />
+            <marker date="1447358859166" expanded="true" signature="1079:1107" placeholder="INSERT INTO ..." />
+            <marker date="1447358859166" expanded="true" signature="1079:1116" placeholder="INSERT INTO ..." />
+            <marker date="1447358859166" expanded="true" signature="1079:1119" placeholder="INSERT INTO ..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Client.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="15" column="24" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <marker date="1447358859146" expanded="true" signature="852:884" placeholder="INSERT INTO ..." />
+            <marker date="1447358859146" expanded="true" signature="852:904" placeholder="INSERT INTO ..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Spy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="16" column="31" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="docComment;class#Spy#0" expanded="false" />
+            <marker date="1447358859166" expanded="true" signature="651:703" placeholder="INSERT INTO ..." />
+            <marker date="1447358859166" expanded="true" signature="1079:1091" placeholder="INSERT INTO ..." />
+            <marker date="1447358859166" expanded="true" signature="1079:1106" placeholder="INSERT INTO ..." />
+            <marker date="1447358859166" expanded="true" signature="1079:1107" placeholder="INSERT INTO ..." />
+            <marker date="1447358859166" expanded="true" signature="1079:1116" placeholder="INSERT INTO ..." />
+            <marker date="1447358859166" expanded="true" signature="1079:1119" placeholder="INSERT INTO ..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Client.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <marker date="1447358859146" expanded="true" signature="852:884" placeholder="INSERT INTO ..." />
+            <marker date="1447358859146" expanded="true" signature="852:904" placeholder="INSERT INTO ..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Spy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="3" column="26" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="docComment;class#Spy#0" expanded="false" />
+            <marker date="1447358859166" expanded="true" signature="651:703" placeholder="INSERT INTO ..." />
+            <marker date="1447358859166" expanded="true" signature="1079:1091" placeholder="INSERT INTO ..." />
+            <marker date="1447358859166" expanded="true" signature="1079:1106" placeholder="INSERT INTO ..." />
+            <marker date="1447358859166" expanded="true" signature="1079:1107" placeholder="INSERT INTO ..." />
+            <marker date="1447358859166" expanded="true" signature="1079:1116" placeholder="INSERT INTO ..." />
+            <marker date="1447358859166" expanded="true" signature="1079:1119" placeholder="INSERT INTO ..." />
           </folding>
         </state>
       </provider>
@@ -646,9 +770,8 @@
           <caret line="27" column="23" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="23" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#511#512#0" expanded="true" />
-            <element signature="e#546#547#0" expanded="true" />
-            <marker date="1447275528709" expanded="true" signature="982:1023" placeholder="INSERT INTO ..." />
+            <marker date="1447358859146" expanded="true" signature="852:884" placeholder="INSERT INTO ..." />
+            <marker date="1447358859146" expanded="true" signature="852:904" placeholder="INSERT INTO ..." />
           </folding>
         </state>
       </provider>
@@ -660,21 +783,13 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="docComment;class#Spy#0" expanded="false" />
-            <marker date="1447277404605" expanded="true" signature="662:703" placeholder="INSERT INTO ..." />
-            <marker date="1447277404605" expanded="true" signature="1076:1088" placeholder="INSERT INTO ..." />
-            <marker date="1447277404605" expanded="true" signature="1076:1103" placeholder="INSERT INTO ..." />
-            <marker date="1447277404605" expanded="true" signature="1076:1104" placeholder="INSERT INTO ..." />
-            <marker date="1447277404605" expanded="true" signature="1076:1113" placeholder="INSERT INTO ..." />
-            <marker date="1447277404605" expanded="true" signature="1076:1116" placeholder="INSERT INTO ..." />
+            <marker date="1447358859166" expanded="true" signature="651:703" placeholder="INSERT INTO ..." />
+            <marker date="1447358859166" expanded="true" signature="1079:1091" placeholder="INSERT INTO ..." />
+            <marker date="1447358859166" expanded="true" signature="1079:1106" placeholder="INSERT INTO ..." />
+            <marker date="1447358859166" expanded="true" signature="1079:1107" placeholder="INSERT INTO ..." />
+            <marker date="1447358859166" expanded="true" signature="1079:1116" placeholder="INSERT INTO ..." />
+            <marker date="1447358859166" expanded="true" signature="1079:1119" placeholder="INSERT INTO ..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/input.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="11" column="7" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -769,25 +884,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/input.txt">
+    <entry file="file://$PROJECT_DIR$/src/Node.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="4" column="12" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Messager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="126" column="30" selection-start-line="126" selection-start-column="17" selection-end-line="126" selection-end-column="30" />
+          <caret line="52" column="58" selection-start-line="52" selection-start-column="58" selection-end-line="52" selection-end-column="58" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
-            <marker date="1447278584069" expanded="true" signature="743:794" placeholder="CREATE TABLE..IF..." />
-            <marker date="1447278584069" expanded="true" signature="882:900" placeholder="DELETE FROM ..." />
-            <marker date="1447278584069" expanded="true" signature="1058:1113" placeholder="CREATE TABLE..IF..." />
-            <marker date="1447278584069" expanded="true" signature="1201:1223" placeholder="DELETE FROM ..." />
+            <marker date="1447358900966" expanded="true" signature="557:608" placeholder="CREATE TABLE..IF..." />
+            <marker date="1447358900966" expanded="true" signature="696:714" placeholder="DELETE FROM ..." />
+            <marker date="1447358900966" expanded="true" signature="872:927" placeholder="CREATE TABLE..IF..." />
+            <marker date="1447358900966" expanded="true" signature="1015:1037" placeholder="DELETE FROM ..." />
           </folding>
         </state>
       </provider>
@@ -795,30 +902,37 @@
     <entry file="file://$PROJECT_DIR$/src/Client.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="15" column="24" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
+          <caret line="23" column="105" selection-start-line="23" selection-start-column="105" selection-end-line="23" selection-end-column="105" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#511#512#0" expanded="true" />
-            <element signature="e#546#547#0" expanded="true" />
-            <marker date="1447275528709" expanded="true" signature="982:1023" placeholder="INSERT INTO ..." />
+            <marker date="1447358859146" expanded="true" signature="852:884" placeholder="INSERT INTO ..." />
+            <marker date="1447358859146" expanded="true" signature="852:904" placeholder="INSERT INTO ..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Spy.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.21634616">
-          <caret line="16" column="31" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="16" column="114" selection-start-line="16" selection-start-column="114" selection-end-line="16" selection-end-column="114" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="docComment;class#Spy#0" expanded="false" />
-            <marker date="1447277404605" expanded="true" signature="662:703" placeholder="INSERT INTO ..." />
-            <marker date="1447277404605" expanded="true" signature="1076:1088" placeholder="INSERT INTO ..." />
-            <marker date="1447277404605" expanded="true" signature="1076:1103" placeholder="INSERT INTO ..." />
-            <marker date="1447277404605" expanded="true" signature="1076:1104" placeholder="INSERT INTO ..." />
-            <marker date="1447277404605" expanded="true" signature="1076:1113" placeholder="INSERT INTO ..." />
-            <marker date="1447277404605" expanded="true" signature="1076:1116" placeholder="INSERT INTO ..." />
+            <marker date="1447358859166" expanded="true" signature="651:703" placeholder="INSERT INTO ..." />
+            <marker date="1447358859166" expanded="true" signature="1079:1091" placeholder="INSERT INTO ..." />
+            <marker date="1447358859166" expanded="true" signature="1079:1106" placeholder="INSERT INTO ..." />
+            <marker date="1447358859166" expanded="true" signature="1079:1107" placeholder="INSERT INTO ..." />
+            <marker date="1447358859166" expanded="true" signature="1079:1116" placeholder="INSERT INTO ..." />
+            <marker date="1447358859166" expanded="true" signature="1079:1119" placeholder="INSERT INTO ..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Message.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.12038523">
+          <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
+          <folding />
         </state>
       </provider>
     </entry>
