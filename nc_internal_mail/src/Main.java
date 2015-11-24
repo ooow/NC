@@ -1,7 +1,7 @@
-import Internal_Mail.*;
-import People.*;
-import People.Spy;
-import Secret_Room.*;
+import internalMail.Message;
+import internalMail.PostOffice;
+import people.*;
+import secretRoom.*;
 
 import java.util.ArrayList;
 
@@ -12,14 +12,14 @@ import java.util.ArrayList;
 public class Main {
     public static void main(String[] args) {
 
-        Secret_Base NYCHKA = new Secret_Base();
+        SecretBase NYCHKA = new SecretBase();
 
-        Post_office usaPost = new Post_office("USA");
-        Post_office rusPost = new Post_office("RUSSIA");
-        Post_office gerPost = new Post_office("GERMANY");
-        Post_office fraPost = new Post_office("FRANCE");
-        Post_office itaPost = new Post_office("ITALY");
-        Post_office polPost = new Post_office("POLAND");
+        PostOffice usaPost = new PostOffice("USA");
+        PostOffice rusPost = new PostOffice("RUSSIA");
+        PostOffice gerPost = new PostOffice("GERMANY");
+        PostOffice fraPost = new PostOffice("FRANCE");
+        PostOffice itaPost = new PostOffice("ITALY");
+        PostOffice polPost = new PostOffice("POLAND");
 
         // Связь отделений: США -> Россия -> Германия
         //                         Россия -> Франция -> Италия -> Польша
@@ -43,7 +43,6 @@ public class Main {
         usateam.add(Grece);
 
 
-
         // RUSSIAN POST TEAM
         ArrayList<Worker> rusteam = new ArrayList<>();
         rusteam.add(new Postman("Ivan"));
@@ -55,8 +54,6 @@ public class Main {
         Spy Kirill = new Spy("Kirill");
         Kirill.setContact(Roman);
         rusteam.add(Kirill);
-
-
 
 
         // GERMAN POST TEAM
@@ -74,8 +71,6 @@ public class Main {
         gerteam.add(Sophia);
 
 
-
-
         // French POST TEAM
         ArrayList<Worker> frateam = new ArrayList<>();
         frateam.add(new Postman("Marie"));
@@ -88,7 +83,6 @@ public class Main {
         Spy Nikole = new Spy("Nikole");
         Nikole.setContact(Jean);
         frateam.add(Nikole);
-
 
 
         // Italian POST TEAM
