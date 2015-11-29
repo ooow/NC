@@ -6,9 +6,9 @@ import java.util.Date;
  */
 
 public class Airline implements Airport{
-    private String CompanyName;
+    public String CompanyName;
     private ArrayList<Customer> customers = new ArrayList<>();          //список клиентов
-    private static ArrayList<Flight> flights = new ArrayList<>();              //список рейсов
+    private static ArrayList<Flight> flights = new ArrayList<>();       //список рейсов
     private ArrayList<Airplane> airplanes = new ArrayList<>();          //список самолетов
     private ArrayList<Ticket> tickets = new ArrayList<>();              //список билетов
     private ArrayList<String> cities = new ArrayList<>();               //города исполняемых рейсов
