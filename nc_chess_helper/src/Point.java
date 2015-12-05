@@ -12,8 +12,7 @@ public class Point {
     }
 
     // Метод проверяющий принадлежит ли точка шахматной доске
-    public static boolean inChess(Point a) {
-        return a != null && a.x < 8 && a.x >= 0 && a.y < 8 && a.y >= 0;
+    public boolean inChess() {
+        return x < 8 && x >= 0 && y < 8 && y >= 0;
     }
 }
-

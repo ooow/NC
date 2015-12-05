@@ -8,9 +8,9 @@ import java.util.Map;
 import java.util.StringTokenizer;
 
 public class ReadAndWrite {
-    static BufferedReader in;
-    static PrintWriter out;
-    static StringTokenizer st;
+    BufferedReader in;
+    PrintWriter out;
+    StringTokenizer st;
     private Point p;        // расположение фигуры
     private Figure f;       // тип фигуры
 
@@ -49,10 +49,10 @@ public class ReadAndWrite {
         out = new PrintWriter(new BufferedOutputStream(new FileOutputStream("output.txt")));
         Point[] mp = f.makeAmove(p);
         int[][] ans = new int[8][8];
-        int k = 0;
         for (int i = 0; i < mp.length; i++) {
-            if (Point.inChess(mp[i]))
-                ans[mp[i].y][mp[i].x] = 1;
+            if (mp[i] != null)
+                if (mp[i].inChess())
+                    ans[mp[i].y][mp[i].x] = 1;
         }
         for (int i = 0; i < 8; i++) {
             for (int j = 0; j < 8; j++) {
@@ -65,14 +65,14 @@ public class ReadAndWrite {
         out.close();
     }
 
-    static String next() throws IOException {
+    String next() throws IOException {
         while (st == null || !st.hasMoreTokens()) {
             st = new StringTokenizer(in.readLine());
         }
         return st.nextToken();
     }
 
-    static int nextInt() throws IOException {
+    int nextInt() throws IOException {
         return Integer.parseInt(next());
     }
 }

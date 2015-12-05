@@ -107,7 +107,7 @@ public enum Figure {
     PAWN() {
         @Override
         Point[] makeAmove(Point p) {
-            Point[] area = new Point[9];
+            Point[] area = new Point[2];
             area[0] = p;
             area[1] = new Point(p.x, p.y - 1);
             return area;
@@ -118,4 +118,3 @@ public enum Figure {
         return new Point[0];
     }
 }
-
