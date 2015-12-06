@@ -8,9 +8,9 @@ import java.util.Map;
 import java.util.StringTokenizer;
 
 public class ReadAndWrite {
-    BufferedReader in;
-    PrintWriter out;
-    StringTokenizer st;
+    private BufferedReader in;
+    private PrintWriter out;
+    private StringTokenizer st;
     private Point p;        // расположение фигуры
     private Figure f;       // тип фигуры
 
