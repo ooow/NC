@@ -1,8 +1,7 @@
-/**
- * Created by goga on 13.12.15.
- */
+import java.io.IOException;
+
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         new GUI();
     }
 }

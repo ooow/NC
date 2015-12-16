@@ -1,52 +1,61 @@
+import javax.swing.*;
 import java.awt.*;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.lang.reflect.Array;
+import java.lang.reflect.WildcardType;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.net.SocketException;
+import java.util.Arrays;
 
 /**
  * Created by goga on 13.12.15.
  */
-public class Server implements Runnable {
+public class Server extends JFrame {
     private ServerSocket server;
     private Socket connect;
     private ObjectOutputStream out;
     private ObjectInputStream in;
-    private boolean Run = true;
     private int[][] map = new int[3][3];
     private boolean firstStep = true;
 
-    @Override
-    public void run() {
+    public Server(int port) {
+        super("server");
+        setLayout(new FlowLayout());
+        setVisible(true);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setSize(200, 70);
+        add(new JLabel("working"));
+        for (int i = 0; i < map.length; i++) {
+            Arrays.fill(map[i], -1);
+        }
         try {
-            server = new ServerSocket(7777, 10);
-            // при запуске сервера, все клетки заполнены -1, далее сервер будет запонять их 1- крсетики, 0- нолики
-            for (int i = 0; i < map.length; i++) {
-                for (int j = 0; j < map[i].length; j++) {
-                    map[i][j] = -1;
-                }
-            }
-            while (Run) {
+            server = new ServerSocket(port, 10);
+            System.out.println("Server запущен");
+            while (true) {
                 connect = server.accept();
+                System.out.println("Соединение установленно");
                 out = new ObjectOutputStream(connect.getOutputStream());
-                out.flush();
                 in = new ObjectInputStream(connect.getInputStream());
-                make_A_move();
+                out.writeObject(makeMove((Point) in.readObject()));
             }
-        } catch (SocketException ignored) {
         } catch (IOException e) {
+            System.out.println("Не установленно соединение");
+        } catch (ClassNotFoundException e) {
             e.printStackTrace();
-        } finally {
-            close();
         }
     }
 
+    public static void main(String[] args) {
+        Server s = new Server(7777);
+    }
+
     // Метод закрыающий сервер
+
     public void close() {
         try {
-            Run = false;
             out.close();
             in.close();
             connect.close();
@@ -57,44 +66,37 @@ public class Server implements Runnable {
     }
 
     // ниже указана "Стратегия" сервера (коментировать ее не вижу смысла, она не подобие AI)
-    private void make_A_move() {
-        try {
-            Point p = (Point) in.readObject();
-            map[p.x][p.y] = 1;
-            int i = 0;
-            int j = 0;
-            if (firstStep) {
-                firstStep = false;
-                if (isAngle(p)) {
-                    i = Math.abs(p.x - 2);
-                    j = Math.abs(p.y - 2);
-                }
-                if (isEdge(p)) {
-                    i = 2;
-                    j = 2;
-                }
-                if (isCentre(p)) {
-                    i = 0;
-                    j = 2;
-                }
-            } else {
-                for (int k = 0; k < map.length; k++) {
-                    for (int l = 0; l < map.length; l++) {
-                        if (map[k][l] == 0) {
-                            Point pr = newPlace(k, l);
-                            i = pr.x;
-                            j = pr.y;
-                        }
+    private Point makeMove(Point p) {
+        map[p.x][p.y] = 1;
+        int i = 0;
+        int j = 0;
+        if (firstStep) {
+            firstStep = false;
+            if (isAngle(p)) {
+                i = Math.abs(p.x - 2);
+                j = Math.abs(p.y - 2);
+            }
+            if (isEdge(p)) {
+                i = 2;
+                j = 2;
+            }
+            if (isCentre(p)) {
+                i = 0;
+                j = 2;
+            }
+        } else {
+            for (int k = 0; k < map.length; k++) {
+                for (int l = 0; l < map.length; l++) {
+                    if (map[k][l] == 0) {
+                        Point pr = newPlace(k, l);
+                        i = pr.x;
+                        j = pr.y;
                     }
                 }
             }
-            map[i][j] = 0;
-            p = new Point(i, j);
-            out.writeObject(p);
-            out.flush();
-        } catch (Exception e) {
-            e.printStackTrace();
         }
+        map[i][j] = 0;
+        return new Point(i, j);
     }
 
     private boolean isAngle(Point r) {

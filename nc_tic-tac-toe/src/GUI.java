@@ -2,24 +2,19 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.net.SocketException;
 
-/**
- * Created by goga on 13.12.15.
- */
 public class GUI extends JFrame {
     private JButton[][] b = new JButton[3][3];
-    private Server server = new Server();
-    private Thread t1 = new Thread(server);
     private Active click = new Active();
     private boolean newGame = true;
+    private Gamer g;
 
     public GUI() {
         super("X  and  O");
-        setLayout(new GridLayout(3, 3, 0, 0));
+        setLayout(new GridLayout(4, 3, 0, 0));
         setVisible(true);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(300, 300);
+        setSize(300, 400);
         setLocationRelativeTo(null);
         Font BigFont = new Font("Georgia", Font.BOLD, 55);
         for (int i = 0; i < b.length; i++) {
@@ -30,11 +25,20 @@ public class GUI extends JFrame {
                 b[i][j].addActionListener(click);
             }
         }
-        t1.start();
+        JButton temp = new JButton();
+        temp.setEnabled(false);
+        add(temp);
+        JButton restart = new JButton();
+        restart.setText("RESTART");
+        add(restart);
+        temp = new JButton();
+        temp.setEnabled(false);
+        add(temp);
+        g = new Gamer(7777);
+        new Thread(g).start();
     }
 
     class Active implements ActionListener {
-        private char[] mas = new char[9];
 
         @Override
         public void actionPerformed(ActionEvent e) {
@@ -42,33 +46,18 @@ public class GUI extends JFrame {
                 for (int j = 0; j < b[i].length; j++) {
                     // Когда игрок нажимает на кнопку, на ней пояляется Х и ее координаты отпраялются на сервер
                     if (e.getSource() == b[i][j]) {
-                        if (newGame) {
-                            b[i][j].setText("X");
-                            if (isWin("X")) {
-                                Win("X");
-                                break;
-                            }
-                            b[i][j].setEnabled(false);
-                            Gamer g = new Gamer(i, j);
-                            g.run();
-                            Point t = g.getStep();
-                            b[t.x][t.y].setText("O");
-                            b[t.x][t.y].setEnabled(false);
-                            if (isWin("O")) {
-                                Win("O");
-                                break;
-                            }
-                        } else {
-                            for (int k = 0; k < b.length; k++) {
-                                for (int l = 0; l < b.length; l++) {
-                                    b[k][l].setText("");
-                                }
-                            }
-                            server.close();
-                            server = new Server();
-                            Thread t1 = new Thread(server);
-                            t1.start();
-                            newGame = true;
+                        b[i][j].setText("X");
+                        if (isWin("X")) {
+                            win("X");
+                            break;
+                        }
+                        b[i][j].setEnabled(false);
+                        Point t = g.makeStep(new Point(i, j));
+                        b[t.x][t.y].setText("O");
+                        b[t.x][t.y].setEnabled(false);
+                        if (isWin("O")) {
+                            win("O");
+                            break;
                         }
                     }
                 }
@@ -77,7 +66,7 @@ public class GUI extends JFrame {
 
         //  Вывод победителя
 
-        public void Win(String XO) {
+        public void win(String XO) {
             newGame = false;
             for (int k = 0; k < b.length; k++) {
                 for (int l = 0; l < b[k].length; l++) {
