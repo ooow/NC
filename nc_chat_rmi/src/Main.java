@@ -1,3 +1,5 @@
+import clients.Client;
+import servers.GreenLine;
 import servers.RMIserver;
 
 import java.rmi.AlreadyBoundException;
@@ -9,8 +11,12 @@ import java.rmi.RemoteException;
  */
 public class Main {
     public static void main(String[] args) throws AlreadyBoundException, RemoteException, NotBoundException {
-        new RMIserver();
-        new Thread(new ClientGUI("Mike", 100, 150)).start();
-        new Thread(new ClientGUI("Rob", 850, 150)).start();
+        Client Mike = new Client("Mike");
+        Client Rob = new Client("Rob");
+        System.out.println(Mike);
+        System.out.println(Rob);
+        new RMIserver(Mike, Rob);                             // Создаю сервер (чат для 2-х пользователей)
+        new Thread(new ClientGUI(Mike, 100, 150)).start();    // В качестве ID использую имя
+        new Thread(new ClientGUI(Rob, 850, 150)).start();
     }
 }

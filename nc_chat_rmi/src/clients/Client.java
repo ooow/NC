@@ -1,10 +1,9 @@
 package clients;
 
-import chat.Const;
-import chat.TestRemote;
+import chat.Chats;
 
+import javax.swing.*;
 import java.rmi.NotBoundException;
-import java.rmi.Remote;
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
@@ -14,16 +13,31 @@ import java.rmi.registry.Registry;
  */
 public class Client {
     private String name;
+    private JTextArea texts;
     private Registry registry;
-    private TestRemote remote;
+    private Chats remote;
 
-    public Client(String name) throws RemoteException, NotBoundException {
+    public Client(String name){
         this.name = name;
-        registry = LocateRegistry.getRegistry("localhost", Const.RMI_PORT);
-        remote = (TestRemote) registry.lookup(Const.RMI_ID);
+    }
+    public void connect() throws RemoteException, NotBoundException {
+        registry = LocateRegistry.getRegistry("localhost", 7777);
+        remote = (Chats) registry.lookup(this.name);
     }
 
     public void send(String message) throws RemoteException {
         remote.sendMessage(message);
+    }
+
+    public void receive(String mes) {
+        texts.setText(mes);
+    }
+
+    public void addSlot(JTextArea texts) {
+        this.texts = texts;
+    }
+    @Override
+    public String toString(){
+        return this.name;
     }
 }

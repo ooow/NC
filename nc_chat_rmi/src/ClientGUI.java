@@ -1,10 +1,7 @@
 import clients.Client;
-import com.sun.org.apache.xpath.internal.SourceTree;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
 
@@ -12,17 +9,17 @@ import java.rmi.RemoteException;
  * Created by goga on 16.12.15.
  */
 public class ClientGUI extends JFrame implements Runnable {
-    private String name;
+    private Client user;
     private int x, y;
     private JButton b;
     private JTextArea t1;
     private JTextField t2;
 
-    public ClientGUI(String name, int x, int y) throws RemoteException, NotBoundException {
-        super(name);
+    public ClientGUI(Client name, int x, int y) throws RemoteException, NotBoundException {
+        super(name.toString());
         this.x = x;
         this.y = y;
-        this.name = name;
+        this.user = name;
     }
 
     @Override
@@ -42,20 +39,21 @@ public class ClientGUI extends JFrame implements Runnable {
         add(t1);
         add(t2);
         add(b);
+        user.addSlot(t1);
         try {
-            Client A = new Client(name);
-            b.addActionListener(e -> {
-                if (e.getSource() == b) {
-                    try {
-                        A.send(t2.getText());
-                        t2.setText("");
-                    } catch (RemoteException e1) {
-                        System.out.println("Что то не так");
-                    }
-                }
-            });
+            user.connect();
         } catch (RemoteException | NotBoundException e) {
             e.printStackTrace();
         }
+        b.addActionListener(e -> {
+            if (e.getSource() == b) {
+                try {
+                    user.send(t2.getText());
+                    t2.setText("");
+                } catch (RemoteException e1) {
+                    System.out.println("Что то не так");
+                }
+            }
+        });
     }
 }
