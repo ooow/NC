@@ -2,19 +2,28 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.net.InetAddress;
+import java.net.Socket;
 
-public class GUI extends JFrame {
+public class GamerGUI extends JFrame {
+    private Socket connect;
+    private ObjectOutputStream out;
+    private ObjectInputStream in;
+    private int port;
     private JButton[][] b = new JButton[3][3];
     private Active click = new Active();
-    private boolean newGame = true;
-    private Gamer g;
+    private boolean newGames = false;
 
-    public GUI() {
+    public GamerGUI(int port) {
         super("X  and  O");
-        setLayout(new GridLayout(4, 3, 0, 0));
+        this.port = port;
+        setLayout(new GridLayout(3, 3, 0, 0));
         setVisible(true);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(300, 400);
+        setSize(300, 300);
         setLocationRelativeTo(null);
         Font BigFont = new Font("Georgia", Font.BOLD, 55);
         for (int i = 0; i < b.length; i++) {
@@ -25,17 +34,52 @@ public class GUI extends JFrame {
                 b[i][j].addActionListener(click);
             }
         }
-        JButton temp = new JButton();
-        temp.setEnabled(false);
-        add(temp);
-        JButton restart = new JButton();
-        restart.setText("RESTART");
-        add(restart);
-        temp = new JButton();
-        temp.setEnabled(false);
-        add(temp);
-        g = new Gamer(7777);
-        new Thread(g).start();
+        try {
+            connect = new Socket(InetAddress.getByName("localhost"), this.port);
+            System.out.println("Соединение установленно");
+            out = new ObjectOutputStream(connect.getOutputStream());
+            in = new ObjectInputStream(connect.getInputStream());
+        } catch (IOException e) {
+            b[0][0].setFont(new Font("Georgia", Font.PLAIN, 12));
+            b[0][0].setText("Связь");
+            b[0][1].setFont(new Font("Georgia", Font.PLAIN, 12));
+            b[0][1].setText("потеряна");
+            for (JButton[] aB : b) {
+                for (JButton anAB : aB) {
+                    anAB.setEnabled(false);
+                }
+            }
+            System.out.println("Не удалось подключиться к серверу");
+        }
+    }
+
+    public static void main(String[] args) {
+        GamerGUI h1 = new GamerGUI(7777);
+    }
+
+    public Point makeStep(Point p) {
+        Point np = null;
+        try {
+            out.writeObject(p);
+            np = (Point) in.readObject();
+        } catch (IOException e) {
+            System.out.println("Не выполнился ход");
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } finally {
+            return np;
+        }
+    }
+
+    public void newGame(Point p) {
+        try {
+            out.writeObject(p);
+            System.out.println("Отправил ход ");
+        } catch (IOException e) {
+            System.out.println("не выполнился ход");
+        } finally {
+            newGames = true;
+        }
     }
 
     class Active implements ActionListener {
@@ -46,18 +90,30 @@ public class GUI extends JFrame {
                 for (int j = 0; j < b[i].length; j++) {
                     // Когда игрок нажимает на кнопку, на ней пояляется Х и ее координаты отпраялются на сервер
                     if (e.getSource() == b[i][j]) {
-                        b[i][j].setText("X");
-                        if (isWin("X")) {
-                            win("X");
-                            break;
-                        }
-                        b[i][j].setEnabled(false);
-                        Point t = g.makeStep(new Point(i, j));
-                        b[t.x][t.y].setText("O");
-                        b[t.x][t.y].setEnabled(false);
-                        if (isWin("O")) {
-                            win("O");
-                            break;
+                        if (!newGames) {
+                            b[i][j].setText("X");
+                            if (isWin("X")) {
+                                win("X");
+                                newGame(new Point(-1, -1));
+                                break;
+                            }
+                            b[i][j].setEnabled(false);
+                            Point t = makeStep(new Point(i, j));
+                            b[t.x][t.y].setText("O");
+                            b[t.x][t.y].setEnabled(false);
+                            if (isWin("O")) {
+                                win("O");
+                                newGame(new Point(-1, -1));
+                                break;
+                            }
+                        } else {
+                            newGames = false;
+                            for (JButton[] aB : b) {
+                                for (int l = 0; l < b[i].length; l++) {
+                                    aB[l].setEnabled(true);
+                                    aB[l].setText("");
+                                }
+                            }
                         }
                     }
                 }
@@ -67,7 +123,6 @@ public class GUI extends JFrame {
         //  Вывод победителя
 
         public void win(String XO) {
-            newGame = false;
             for (int k = 0; k < b.length; k++) {
                 for (int l = 0; l < b[k].length; l++) {
                     b[k][l].setEnabled(true);

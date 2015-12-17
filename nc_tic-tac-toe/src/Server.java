@@ -13,7 +13,7 @@ import java.util.Arrays;
 /**
  * Created by goga on 13.12.15.
  */
-public class Server extends JFrame {
+public class Server {
     private ServerSocket server;
     private Socket connect;
     private ObjectOutputStream out;
@@ -22,24 +22,28 @@ public class Server extends JFrame {
     private boolean firstStep = true;
 
     public Server(int port) {
-        super("server");
-        setLayout(new FlowLayout());
-        setVisible(true);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(200, 70);
-        add(new JLabel("working"));
-        for (int i = 0; i < map.length; i++) {
-            Arrays.fill(map[i], -1);
-        }
         try {
             server = new ServerSocket(port, 10);
             System.out.println("Server запущен");
-            while (true) {
-                connect = server.accept();
-                System.out.println("Соединение установленно");
-                out = new ObjectOutputStream(connect.getOutputStream());
-                in = new ObjectInputStream(connect.getInputStream());
-                out.writeObject(makeMove((Point) in.readObject()));
+            connect = server.accept();
+            for (int[] aMap : map) {
+                Arrays.fill(aMap, -1);
+            }
+            System.out.println("Соединение установленно");
+            out = new ObjectOutputStream(connect.getOutputStream());
+            in = new ObjectInputStream(connect.getInputStream());
+            while (connect.isConnected()) {
+                Point p = (Point) in.readObject();
+                if (p.x == -1)
+                    // начало новой игры
+                    for (int[] aMap : map) {
+                        Arrays.fill(aMap, -1);
+                        firstStep = true;
+                    }
+                else {
+                    // ответ клиенту
+                    out.writeObject(makeMove(p));
+                }
             }
         } catch (IOException e) {
             System.out.println("Не установленно соединение");
