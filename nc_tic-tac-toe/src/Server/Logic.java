@@ -1,76 +1,24 @@
-import javax.swing.*;
+package Server;
+
 import java.awt.*;
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
-import java.lang.reflect.Array;
-import java.lang.reflect.WildcardType;
-import java.net.ServerSocket;
-import java.net.Socket;
-import java.net.SocketException;
 import java.util.Arrays;
 
 /**
- * Created by goga on 13.12.15.
+ * Created by goga on 23.12.15.
  */
-public class Server {
-    private ServerSocket server;
-    private Socket connect;
-    private ObjectOutputStream out;
-    private ObjectInputStream in;
+
+// "Стратегия" сервера"
+public class Logic {
     private int[][] map = new int[3][3];
     private boolean firstStep = true;
 
-    public Server(int port) {
-        try {
-            server = new ServerSocket(port, 10);
-            System.out.println("Server запущен");
-            connect = server.accept();
-            for (int[] aMap : map) {
-                Arrays.fill(aMap, -1);
-            }
-            System.out.println("Соединение установленно");
-            out = new ObjectOutputStream(connect.getOutputStream());
-            in = new ObjectInputStream(connect.getInputStream());
-            while (connect.isConnected()) {
-                Point p = (Point) in.readObject();
-                if (p.x == -1)
-                    // начало новой игры
-                    for (int[] aMap : map) {
-                        Arrays.fill(aMap, -1);
-                        firstStep = true;
-                    }
-                else {
-                    // ответ клиенту
-                    out.writeObject(makeMove(p));
-                }
-            }
-        } catch (IOException e) {
-            System.out.println("Не установленно соединение");
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
+    public Logic() {
+        for (int[] aMap : map) {
+            Arrays.fill(aMap, -1);
         }
     }
 
-    public static void main(String[] args) {
-        Server s = new Server(7777);
-    }
-
-    // Метод закрыающий сервер
-
-    public void close() {
-        try {
-            out.close();
-            in.close();
-            connect.close();
-            server.close();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    // ниже указана "Стратегия" сервера (коментировать ее не вижу смысла, она не подобие AI)
-    private Point makeMove(Point p) {
+    public Point makeMove(Point p) {
         map[p.x][p.y] = 1;
         int i = 0;
         int j = 0;
