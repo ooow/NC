@@ -41,16 +41,6 @@ public class Server {
             e.printStackTrace();
         } finally {
             try {
-                out.close();
-            } catch (IOException e) {
-                System.out.println("Ошибка при закрытии потока /out");
-            }
-            try {
-                in.close();
-            } catch (IOException e) {
-                System.out.println("Ошибка при закрытии потока /in");
-            }
-            try {
                 connect.close();
             } catch (IOException e) {
                 System.out.println("Ошибка при разрыве связи");
@@ -64,7 +54,7 @@ public class Server {
     }
 
     public static void main(String[] args) {
-        Server s = new Server(7777);
+        new Server(7777);
     }
 }
 

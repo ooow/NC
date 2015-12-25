@@ -44,47 +44,50 @@ public class GUI extends JFrame {
         public void actionPerformed(ActionEvent e) {
             for (int i = 0; i < b.length; i++) {
                 for (int j = 0; j < b[i].length; j++) {
-                    // Когда игрок нажимает на кнопку, на ней пояляется Х и ее координаты отпраялются на сервер
                     if (e.getSource() == b[i][j]) {
-                        if (!c.getStatus()) {
-                            b[i][j].setText("X");
-                            if (c.isWin("X")) {
-                                c.win("X");
-                                c.newGame(new Point(-1, -1));
-                                isDraw = 0;
-                                break;
-                            }
-                            b[i][j].setEnabled(false);
-                            isDraw++;
-                            if (isDraw == 5) {
-                                c.newGame(new Point(-1, -1));
-                                c.setStatus(false);
-                                for (JButton[] aB : b) {
-                                    for (int l = 0; l < b[i].length; l++) {
-                                        aB[l].setEnabled(true);
-                                        aB[l].setText("");
-                                    }
-                                }
-                                break;
-                            }
-                            Point t = c.makeStep(new Point(i, j));
-                            b[t.x][t.y].setText("O");
-                            b[t.x][t.y].setEnabled(false);
-                            if (c.isWin("O")) {
-                                c.win("O");
-                                c.newGame(new Point(-1, -1));
-                                isDraw = 0;
-                                break;
-                            }
-                        } else {
-                            c.setStatus(false);
-                            for (JButton[] aB : b) {
-                                for (int l = 0; l < b[i].length; l++) {
-                                    aB[l].setEnabled(true);
-                                    aB[l].setText("");
-                                }
-                            }
+                        visualization(i, j);
+                    }
+                }
+            }
+        }
+
+        public void visualization(int i, int j) {
+            if (!c.getStatus()) {
+                b[i][j].setText("X");
+                if (c.isWin("X")) {
+                    c.win("X");
+                    c.newGame(new Point(-1, -1));
+                    isDraw = 0;
+                    return;
+                }
+                b[i][j].setEnabled(false);
+                isDraw++;
+                if (isDraw == 5) {
+                    c.newGame(new Point(-1, -1));
+                    c.setStatus(false);
+                    for (JButton[] aB : b) {
+                        for (int l = 0; l < b[i].length; l++) {
+                            aB[l].setEnabled(true);
+                            aB[l].setText("");
                         }
+                    }
+                    return;
+                }
+                Point t = c.makeStep(new Point(i, j));
+                b[t.x][t.y].setText("O");
+                b[t.x][t.y].setEnabled(false);
+                if (c.isWin("O")) {
+                    c.win("O");
+                    c.newGame(new Point(-1, -1));
+                    isDraw = 0;
+                    return;
+                }
+            } else {
+                c.setStatus(false);
+                for (JButton[] aB : b) {
+                    for (int l = 0; l < b[i].length; l++) {
+                        aB[l].setEnabled(true);
+                        aB[l].setText("");
                     }
                 }
             }
