@@ -8,6 +8,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 
 public class GUI extends JFrame {
     private JButton[][] b = new JButton[3][3];
@@ -32,6 +34,13 @@ public class GUI extends JFrame {
             }
         }
         c = new Client(7777, b);
+        addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+                c.close();
+                e.getWindow().dispose();
+            }
+        });
     }
 
     public static void main(String[] args) {
@@ -46,6 +55,7 @@ public class GUI extends JFrame {
                 for (int j = 0; j < b[i].length; j++) {
                     if (e.getSource() == b[i][j]) {
                         visualization(i, j);
+                        break;
                     }
                 }
             }

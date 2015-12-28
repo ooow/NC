@@ -139,4 +139,15 @@ public class Client {
             k++;
         return k == 3;
     }
+
+    public void close() {
+        try {
+            if (connect != null) {
+                this.connect.close();
+                System.out.println("Клиент отключился");
+            }
+        } catch (IOException e) {
+            System.out.println("Ошибка при разрыве связи");
+        }
+    }
 }
